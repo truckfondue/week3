@@ -1,0 +1,34 @@
+
+.container {
+	width: 90%;
+	height: 20%;
+	display: block;
+	margin: 0px auto;
+	
+}
+
+
+.outer-shell {
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	background-color: black;
+}
+
+.inner-shell {
+	background-color: darkgray;
+	max-width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	vertical-align: center;
+}
+
+.clock-screen {
+	background-color: darkred;
+	width: 150px;
+	height: 75px;
+}
+
+.clock-text {
+	color: red;
+}
