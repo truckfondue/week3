@@ -164,13 +164,72 @@ var unique = function(a) {
 };
 
 
-console.log(unique(['a', 'b', 'a', 'c', 'd', 'd'])); // should return ['a', 'b', 'c', 'd']
-console.log(unique(['todd', 'avery', 'maria', 'avery'])); // should return ['todd', 'avery', 'maria']
+//  console.log(unique(['a', 'b', 'a', 'c', 'd', 'd'])); // should return ['a', 'b', 'c', 'd']
+//  console.log(unique(['todd', 'avery', 'maria', 'avery'])); // should return ['todd', 'avery', 'maria']
 
 
  
+var letterCount = function(str){
+	var words = str.split(' ');
+	var arr = [];
+	console.log(str);
+	for (var i = 0; i < words.length; i++) {
+		arr.push(getFrequency(words[i]));
+		console.log(arr);
+	}
+	return arr;
+};
+console.log(letterCount('This is the string to analyze'));
+
+// var max = Math.max.apply(null, _.values(obj))
+// return {word: word, count: max}
 
 
+
+function getFrequency(string) {
+    var freq = {};
+    for (var i=0; i<string.length;i++) {
+        var character = string.charAt(i);
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+
+    return freq;
+}
+
+Array.prototype.getUnique = function(){
+   var u = {}, a = [];
+   for(var i = 0, l = this.length; i < l; ++i){
+      if(u.hasOwnProperty(this[i])) {
+         continue;
+      }
+      a.push(this[i]);
+      u[this[i]] = 1;
+   }
+   return a;
+};
+
+function LetterCountI(str){
+    var temp = str.split(" ");
+    var final = '', weight = 0;
+    for(var i = 0; i < temp.length; ++i) {
+        var word = temp[i].split("");
+        if(word.getUnique().length < word.length) {
+            var diff = word.length - word.getUnique().length;
+            if(diff > weight){
+                weight = diff;
+                final = temp[i];
+            }
+        }
+    }
+    return final;
+}
+
+console.log(LetterCountI("Catt dooog"));
+console.log(LetterCountI("toddday is the greatttttest day ever!"));
 
 
 
