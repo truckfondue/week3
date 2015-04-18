@@ -5,8 +5,10 @@ console.log(results);
 
 
 
-function stringReverse(str) {
-	return str.reverse();
-}
+var stringReverse = function(str) {
+	var backwards = str.split('').reverse().join('');
+	return backwards;
+};
 
-console.log(stringReverse('amazon'));
+var results = stringReverse('amazon');
+console.log(results);
