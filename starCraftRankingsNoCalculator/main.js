@@ -844,9 +844,32 @@ $(document).on('ready', function() {
   tableManipulation(datum);
 });
 
+var avgWins = function(arr){
+	var wins = 0; 
+	for (var i = 0; i < arr.length; i++) {
+	 wins += arr[i][4];
+	}
+	var average = wins/(arr.length);
+	return average;
+};
 
+var resultsAvgWins = avgWins(datum);
+console.log('Wins: ', resultsAvgWins);
 
+var avgLosses = function(arr){
+	var losses = 0; 
+	for (var i = 0; i < arr.length; i++) {
+	 losses += arr[i][5];
+	}
+	var average = losses/(arr.length);
+	return average;
+};
 
+var resultsAvgLosses = avgLosses(datum);
+console.log('Losses: ', resultsAvgLosses);
+
+$('.losses').text(resultsAvgLosses);
+$('.wins').text(resultsAvgWins);
 
 
 

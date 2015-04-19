@@ -1,0 +1,15 @@
+td {
+	width: 15%;
+	background-color: lightgray;
+}
+
+th {
+	text-align: left;
+	background-color: gray
+}
+
+div {
+	width: 20%
+	background-color: peachpuff;
+}
+
